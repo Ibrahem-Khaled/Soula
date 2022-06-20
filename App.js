@@ -95,12 +95,6 @@ const LoginScreen = ({ navigation }) => {
                 source={require("./New/icons/Twitter.png")}
               ></Image>
             </TouchableOpacity>
-
-            <TouchableOpacity>
-              <Image style={{ width: 60, height: 60 }}
-                source={require("./New/icons/yahoo.png")}
-              ></Image>
-            </TouchableOpacity>
           </View>
         </View>
       </SafeAreaView>
