@@ -18,7 +18,7 @@ const Invite = () => {
             <View style={{ alignSelf: "center", flexDirection: "row", width: "90%", justifyContent: "center", top: 15 }}>
                 <Text style={{ fontSize: 20, fontWeight: "bold" }}>Invite friends to the app via a
                     link and get:-
-                    <Text style={{ fontSize: 20, fontWeight: "bold", color: "#FF9900", alignSelf: "center" }}>500 point</Text>
+                    <Text style={{ fontSize: 20, fontWeight: "bold", color: "#FF9900", alignSelf: "center" }}>100 point</Text>
                 </Text>
             </View>
             <View style={{ alignItems: "center", paddingTop: 50 }}>
