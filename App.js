@@ -284,6 +284,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNav = () => {
   return (
     <Drawer.Navigator initialRouteName="Prof"
+    useLegacyImplementation
       screenOptions={{
         drawerPosition: 'left',
         drawerType: 'front',
