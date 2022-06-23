@@ -42,7 +42,6 @@ const LoginScreen = ({ navigation }) => {
       source={require('./New/ionut-comanici-RDcEWH5hSDE-unsplash.jpg')}
       blurRadius={10}
     >
-      <StatusBar backgroundColor={"#51b2ff"} />
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, top: '7.5%' }}>
 
@@ -111,8 +110,11 @@ const ChatScreen = ({ navigation }) => {
 }
 const HomesScreen = () => {
   return (
+    <>
+      <StatusBar backgroundColor={"#51b2ff"} barStyle='dark-content' />
 
-    <Homee />
+      <Homee />
+    </>
   )
 }
 
@@ -284,7 +286,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNav = () => {
   return (
     <Drawer.Navigator initialRouteName="Prof"
-    useLegacyImplementation
+      useLegacyImplementation
       screenOptions={{
         drawerPosition: 'left',
         drawerType: 'front',
