@@ -1,4 +1,8 @@
 {
   "name": "Sool",
-  "displayName": "Sool"
+  "displayName": "Sool",
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-7743830953013097~9587668023",
+    "ios_app_id": "ca-app-pub-7743830953013097~3967297729"
+  }
 }

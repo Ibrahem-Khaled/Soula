@@ -25,8 +25,14 @@ import Chate from './Components/screens/Chaat';
 import Message from './Components/screens/Message';
 import { useNavigation } from '@react-navigation/native';
 import InviteUI from './Components/screens/InviteUI';
-import CustomVideo from './Components/VideoControls';
+import VideoScreens from './Components/screens/Videos';
 import Orientation from 'react-native-orientation-locker';
+import VideoP from './Components/screens/VideoPage';
+import Login from './Components/screens/Login';
+import VideoScreenss from './Components/screens/Profile';
+import ProfileUI from './Components/screens/Profile';
+import CoinUi from './Components/screens/Coins';
+import VoiceRoomUi from './Components/screens/VoiceRoom/VoiceRoomUi';
 
 Orientation.lockToPortrait();
 
@@ -36,70 +42,8 @@ I18nManager.allowRTL(false);
 
 const LoginScreen = ({ navigation }) => {
   return (
-
-    <ImageBackground
-      style={{ flex: 1, justifyContent: 'space-around' }}
-      source={require('./New/ionut-comanici-RDcEWH5hSDE-unsplash.jpg')}
-      blurRadius={10}
-    >
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={{ flex: 1, top: '7.5%' }}>
-
-          <View style={{ flex: 1, justifyContent: 'center' }}>
-            <Image source={require("./New/89234398_paddsed_logo.png")}
-              style={{
-                alignSelf: 'center',
-                width: 200,
-                height: 100,
-                borderRadius: 30,
-              }}></Image>
-          </View>
-          <View style={{ flex: 1, justifyContent: "space-around", }}>
-
-            <TouchableOpacity style={{ alignSelf: 'center', justifyContent: "center", flexDirection: "row", backgroundColor: "#0a7ad3", height: 65, width: 300, borderRadius: 15 }}>
-              <Image style={{ width: 60, height: 60, right: 25, top: 3 }}
-                source={require("./New/icons/FB.png")}
-              >
-              </Image>
-
-              <Text style={{ fontSize: 30, color: "white", fontWeight: "bold", alignSelf: "center" }}>
-                Login with FB
-              </Text>
-
-            </TouchableOpacity>
-
-            <Text style={{ fontSize: 25, color: "black", alignSelf: "center", padding: 30 }}>
-              Other
-            </Text>
-          </View>
-
-          <View style={{ flex: 1, flexDirection: "row", justifyContent: 'space-around', }}>
-            <TouchableOpacity
-              onPress={() => navigation.navigate('MainScreen')}
-            >
-              <Image style={{ width: 60, height: 60 }}
-                source={require("./New/icons/google.png")}
-              >
-              </Image>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <Image style={{ width: 60, height: 60 }}
-                source={require("./New/icons/snapchat-logo.png")}
-              ></Image>
-            </TouchableOpacity>
-
-            <TouchableOpacity>
-              <Image style={{ width: 60, height: 60 }}
-                source={require("./New/icons/Twitter.png")}
-              ></Image>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </SafeAreaView>
-    </ImageBackground >
+    <Login/>
   );
-
 };
 const ChatScreen = ({ navigation }) => {
   return (
@@ -120,9 +64,7 @@ const HomesScreen = () => {
 
 const VoiceScreen = () => {
   return (
-    <View>
-
-    </View>
+    <VoiceRoomUi/>
   )
 }
 const MessageUi = () => {
@@ -133,6 +75,11 @@ const MessageUi = () => {
 const InviteScreen = () => {
   return (
     <InviteUI />
+  )
+}
+const BuyCoins = () => {
+  return (
+    <CoinUi/>
   )
 }
 
@@ -149,12 +96,14 @@ function ProfileScreen(props) {
 
             <View style={{ flexDirection: "column", alignSelf: "center", }}>
               <Text style={{ fontWeight: "bold", fontSize: 20, }}>BElo0</Text>
-              <Text style={{ fontWeight: "bold", fontSize: 13 }}>ID:-1999991</Text>
-              <Text style={{ borderRadius: 5, fontWeight: "bold", color: "white", backgroundColor: "#00CEFF", fontSize: 15, borderWidth: 1 }}>LEVEL:- 5</Text>
+              <Text style={{ fontWeight: "bold", fontSize: 13 }}>ID:-Belo#9999</Text>
+              <Text style={{ borderRadius: 5, fontWeight: "bold", color: "white", backgroundColor: "#00CEFF", fontSize: 15, borderWidth: 1,textAlign:"center" }}>LEVEL:- 5</Text>
             </View>
           </View>
           <View style={{ justifyContent: "space-around", flexDirection: "row" }}>
-            <TouchableOpacity style={{ borderBottomWidth: 1, borderRightWidth: 2, justifyContent: "space-around", alignItems: "center", width: 120, height: 35, backgroundColor: "#FFE28F", flexDirection: "row", borderRadius: 8 }}>
+            <TouchableOpacity
+            onPress={()=>navigation.navigate("Coin")}
+            style={{ borderBottomWidth: 1, borderRightWidth: 2, justifyContent: "space-around", alignItems: "center", width: 120, height: 35, backgroundColor: "#FFE28F", flexDirection: "row", borderRadius: 8 }}>
               <Image style={{ width: 30, height: 30 }}
                 source={require("./New/icons/coin.png")}>
               </Image>
@@ -169,7 +118,9 @@ function ProfileScreen(props) {
           </View>
         </View>
         <View style={{}}>
-          <TouchableOpacity style={{ justifyContent: "space-around", alignItems: "center", width: 220, height: 44, flexDirection: "row", borderRadius: 11, borderBottomWidth: 1, borderRightWidth: 2, margin: 7 }}>
+          <TouchableOpacity 
+         onPress={() => navigation.navigate('ProfileS')}
+          style={{ justifyContent: "space-around", alignItems: "center", width: 220, height: 44, flexDirection: "row", borderRadius: 11, borderBottomWidth: 1, borderRightWidth: 2, margin: 7 }}>
             <Image style={{ width: 30, height: 30 }}
               source={require("./New/icons/users.png")}>
             </Image>
@@ -187,7 +138,9 @@ function ProfileScreen(props) {
             </Image>
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>language</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ justifyContent: "space-around", alignItems: "center", width: 220, height: 44, flexDirection: "row", borderRadius: 11, borderBottomWidth: 1, borderRightWidth: 2, margin: 7 }}>
+          <TouchableOpacity
+          onPress={()=>navigation.navigate("Coin")}
+          style={{ justifyContent: "space-around", alignItems: "center", width: 220, height: 44, flexDirection: "row", borderRadius: 11, borderBottomWidth: 1, borderRightWidth: 2, margin: 7 }}>
             <Image style={{ width: 30, height: 30 }}
               source={require("./New/icons/coin.png")}>
             </Image>
@@ -229,60 +182,16 @@ const SearchScreen = () => {
 }
 const VideoScreen = () => {
 
-  const onVideoError = () => {
-    // setdisplayLoading(false);
-    // setMessage('تعذر تحميل الفيديو!');
-  }
-
-  const onLoadStart = () => {
-    // setdisplayLoading(true);
-    // Pause.current = true;
-  }
-
-  const onVideoLoad = (data) => {
-    // Duration.current = (data.duration + .7) * 1000;
-    // Pause.current = false;
-    // setdisplayLoading(false);
-  }
-
-
   return (
-    <SafeAreaView style={{
-      flex: 1,
-      // justifyContent: 'center',
-      // backgroundColor: 'black',
-    }}>
-      {/* <VideoPlayer
-        // source={{ uri: "https://cdn.videvo.net/videvo_files/video/premium/video0230/large_watermarked/06_Mis_Kudina_42_eat_banan_preview.mp4" }}
-        source={require("./New/11.mp4")}
-        // navigator={this.props.navigator}
-        tapAnywhereToPause={true}
-        toggleResizeModeOnFullscreen={false}
-        isFullScreen={false}
-        // thumbnail={imageUrl}
-        disableBack={true}
-        disableVolume={true}
-        controlTimeout={5000}
-        // paused={this.state.paused}
-        seekColor={'red'}
-      /> */}
-      <CustomVideo />
-    </SafeAreaView>
+    <VideoP/>
+  )
+}
+const VideoPageUi = () => {
+  return (
+    <VideoScreens/>
   )
 }
 const Drawer = createDrawerNavigator();
-// const Drawers = () => {
-//   return (
-//     <NavigationContainer /*onReady={() => RNBootSplash.hide()}*/>
-//       <Drawer.Navigator drawerContent={(props) => <ProfileScreen {...props} />}
-//         screenOptions={{ headerShown: false, drawerStyle: { width: "80%", }, }}>
-//         <Drawer.Screen name="Main" component={App} />
-//       </Drawer.Navigator>
-//     </NavigationContainer>
-
-//   );
-// }
-
 const DrawerNav = () => {
   return (
     <Drawer.Navigator initialRouteName="Prof"
@@ -344,12 +253,6 @@ const App = () => {
           component={InviteScreen}
           options={{ headerShown: true }}
         />
-
-        {/* <Stack.Screen
-        name="MyTab"
-        component={MyTabs}
-      /> */}
-
         <Stack.Screen name="MainScreen" component={DrawerNav}
           options={{
             title: 'Puro Cafe',
@@ -359,6 +262,21 @@ const App = () => {
         <Stack.Screen
           name="MessageUI"
           component={MessageUi}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ProfileS"
+          component={Profiles}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="VideoPageUi"
+          component={VideoPageUi}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Coin"
+          component={BuyCoins}
           options={{ headerShown: false }}
         />
 
@@ -374,6 +292,11 @@ const ProfScreen = () => {
     <View style={{ flex: 1, backgroundColor: isDarkMode ? '#161616' : Colors.lighter, }}>
 
     </View>
+  );
+}
+const Profiles = () => {
+  return (
+    <ProfileUI/>
   );
 }
 
